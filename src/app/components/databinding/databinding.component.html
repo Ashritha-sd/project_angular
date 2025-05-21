@@ -1,0 +1,180 @@
+<style>
+  img{
+    border: 5px, dashed green;
+  }
+</style>
+
+<h3 class="text-center">Lets learn databinding</h3>
+<div class="border p-2 m-2">
+  <div style="color: red;">User name is: {{ userName }}</div>
+  <div>User name is: <span [innerHTML]="userName"></span></div>
+
+  <img src="{{ img_url }}" alt="" width="250" height="300" />
+  <img [src]="img_url" alt="" width="250" height="300" />
+  <img bind-src="img_url" alt="" width="250" height="300" />
+  <br />
+
+  <div class="mt-2">1-way: <input type="text" value="{{ userName }}" /></div>
+  <div>1-way: <input type="text" [value]="userName" [attr.tabindex]="1" /></div>
+  <div>1-way: <input type="text" bind-value="userName" [tabindex]="3" /></div>
+  <div>
+    2-way: <input type="text" [(ngModel)]="userName" [attr.tabindex]="2" />
+  </div>
+  <div>2-way: <input type="text" bindon-ngModel="userName" /></div>
+
+  <div>
+    <button class="btn btn-primary" disabled="{{ flag }}">Click Me</button>
+    <button class="btn btn-primary mx-2" [disabled]="flag">Click Me</button>
+    <button class="btn btn-primary" bind-disabled="flag">Click Me</button>
+  </div>
+
+  <div class="m-2">
+    <button class="btn btn-success" (click)="f1()">Click me</button>
+    <button class="btn btn-success mx-2" on-click="f1()">Click me</button>
+  </div>
+  
+  <table>
+    <tr>
+      <th>Month</th>
+      <th>Savings</th>
+    </tr>
+    <tr>
+      <td>January</td>
+      <td>$100</td>
+    </tr>
+    <tr>
+      <td>February</td>
+      <td>$100</td>
+    </tr>
+    <tr>
+      <!-- <td [attr.colspan]="myColSpanVal">Sum: $180</td> -->
+      <td [colSpan]="myColSpanVal">Sum: $180</td>
+    </tr>
+  </table>
+
+  <div class="m-2 border">
+    <div>Addition Using 2way binding</div>
+    <input [(ngModel)]="num1" />
+    <input [(ngModel)]="num2" />
+    <div>Addition of {{ num1 }} and {{ num2 }} is {{ +num1 + +num2 }}</div>
+  </div>
+
+  <div class="p-2 m-2 border">
+    <div>Addition using template reference variable</div>
+    <input #mybox1 />
+    <input ref-mybox2 />
+    <button
+      class="btn btn-primary"
+      (click)="addition(mybox1.value, mybox2.value)"
+    >
+      Add
+    </button>
+    <div>Addition result is {{ addResult }}</div>
+  </div>
+
+  <!-- 1. Have a paragraph & a toggle button, on click of the button control the visibility(Show/Hide) of the paragraph -->
+
+  <div class="p-2 m-2 border">
+    <div>Assignment-1 (Show/Hide Paragraph)</div>
+    <button
+      class="btn btn-primary"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#collapseExample"
+      aria-expanded="false"
+      aria-controls="collapseExample"
+    >
+      SHOW/HIDE
+    </button>
+    <!-- Aria attribute for accessibility(Screen readers) -->
+    <p id="collapseExample">Helloooooooo</p>
+  </div>
+
+  <div class="p-2 m-2 border">
+    <div>Assignment-1 (Show/Hide Paragraph)</div>
+    <button class="btn btn-primary" (click)="toggle()">SHOW/HIDE</button>
+    <p [hidden]="show">Helloooooooo</p>
+  </div>
+  <!-- We cannot use {{}} because we are working with boolean -->
+  <!-- 2. Create a text-area with maxLength=100, as the user keeps typing display updated Remaining characters. -->
+
+  <div class="p-2 m-2 border">
+    <div>Assignment-2</div>
+    <textarea [(ngModel)]="txt" maxlength="100"></textarea>
+    <p>{{ 100 - txt.length }} characters remaining</p>
+  </div>
+
+  <!-- 3. Create dropdown with state names, when user changes dropdown value, print the selected dropdown value in a paragraph -->
+
+  <div class="p-2 m-2 border">
+    <div>Assignment-3</div>
+    <label for="state">Choose a state:</label>
+    <select name="state" [(ngModel)]="state_selected">
+      <option value="Tennessee">Tennessee</option>
+      <option value="Illinois">Illinois</option>
+      <option value="Texas">Texas</option>
+      <option value="Ohio">Ohio</option>
+    </select>
+    <p>{{ state_selected }} is selected</p>
+  </div>
+
+  <!-- 4. have 2 inputBoxes, and a dropdown(+,-,*,/) and perform arithmetic operations -->
+
+  <div class="p-2 m-2 border">
+    <div>Assignment-4</div>
+    <input #mybox3 />
+    <select name="operator" [(ngModel)]="operator">
+      <option value="+">+</option>
+      <option value="-">-</option>
+      <option value="*">*</option>
+      <option value="/">/</option>
+    </select>
+    <input #mybox4 />
+    <button
+      class="btn btn-primary mx-2"
+      (click)="perform(mybox3.value, mybox4.value)"
+    >
+      Execute
+    </button>
+    <div>Operation result is {{ res }}</div>
+  </div>
+
+  <!-- 5. create a input box, toggle the type of that input box to (text/password) -->
+
+  <div class="p-2 m-2 border">
+    <div>Assignment-5</div>
+    <div>Enter your password</div>
+    <input #mybox5 [type]="flag1" />
+    <button class="btn btn-primary mx-2" (click)="switch()">
+      Text/Password
+    </button>
+  </div>
+
+  <!-- 6. create a counter example with 3 controls(increment,decrement,reset) -->
+
+  <div class="p-2 m-2 border">
+    <div>Assignment-6</div>
+    <p>Counter is {{ counter }}</p>
+    <button class="btn btn-primary" (click)="increment()">Increment</button>
+    <button class="btn btn-primary mx-2" (click)="decrement()">
+      Decrement
+    </button>
+    <button class="btn btn-primary" (click)="reset()">Reset</button>
+  </div>
+
+  <!-- 7. Have a toggle button and control Dark/Light theme of a page. -->
+  <!-- <div [style.background-color]="bgcolor" [style.color]="textcolor">
+    <div class="p-2 m-2 border">
+      <div>Assignment-7</div>
+      <p>Choose Dark or Light theme of the page</p>
+      <button class="btn btn-primary" (click)="theme()">Dark/Light</button>
+    </div>
+  </div> -->
+
+  <div class="p-2 m-2 border">
+    <div>Assignment-7</div>
+    <p>Choose Dark or Light theme of the page</p>
+    <button class="btn btn-primary" (click)="theme()">Dark/Light</button>
+  </div>
+
+</div>
