@@ -1,0 +1,10 @@
+<table class="table table-bordered table-striped text-center">
+  <tbody>
+    @for (employee of employeeArr;track $index){
+    <tr>
+      <td>{{ employee.name }}</td>
+      <td>{{ employee.username }}</td>
+      <td>{{ employee.email }}</td>
+      <td><button class="btn btn-danger" (click)="deleteConfirmation($index)"><fa-icon [icon]="faTrash"></fa-icon></button> </td>
+    </tr>
+}

@@ -18,9 +18,9 @@ import { ParentComponent } from '../parent/parent.component';
     //ProductsComponent
     //MyModalComponent
     //Demo1Component
-    //EmployeeCRUDComponent
+    EmployeeCRUDComponent
     //PipesComponent
-    ParentComponent
+    //ParentComponent
   ],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css'

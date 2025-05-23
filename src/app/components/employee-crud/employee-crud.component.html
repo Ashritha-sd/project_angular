@@ -1,4 +1,12 @@
-<form (ngSubmit)="addEmployee()" #employeeForm="ngForm" class="d-flex flex-wrap align-items-center gap-2">
+
+    <div>
+      <app-employee-add (addressEvent1)="recievedNewEmployeeFromChild($event)"></app-employee-add>
+        <app-employee-table [employeeArr]="Employees" (addressEvent)="recievedIndexToDeleteFromChild($event)"></app-employee-table>
+        
+    </div>
+
+
+<!-- <form (ngSubmit)="addEmployee()" #employeeForm="ngForm" class="d-flex flex-wrap align-items-center gap-2">
   <input type="text" class="form-control form-control-sm" placeholder="Name" [(ngModel)]="newEmployee.name" name="name" required style="max-width: 150px;">
   
   <input type="text" class="form-control form-control-sm" placeholder="Username" [(ngModel)]="newEmployee.username" name="username" required style="max-width: 150px;">
@@ -50,4 +58,4 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->
