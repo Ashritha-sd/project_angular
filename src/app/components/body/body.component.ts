@@ -8,6 +8,12 @@ import { Demo1Component } from '../demo1/demo1.component';
 import { EmployeeCRUDComponent } from '../employee-crud/employee-crud.component';
 import { PipesComponent } from '../pipes/pipes.component';
 import { ParentComponent } from '../parent/parent.component';
+import { Math1Component } from '../math1/math1.component';
+import { Math2Component } from '../math2/math2.component';
+import { TrafficLightComponent } from '../traffic-light/traffic-light.component';
+import { Demo2Component } from '../demo2/demo2.component';
+import { CommonModule } from '@angular/common';
+import { EmployeeComponent } from '../employee/employee.component';
 
 @Component({
   selector: 'app-body',
@@ -17,14 +23,20 @@ import { ParentComponent } from '../parent/parent.component';
     // DirectivesComponent
     //ProductsComponent
     //MyModalComponent
-    //Demo1Component
-    EmployeeCRUDComponent
+    // Demo1Component,
+    // Demo2Component,
+    // CommonModule
+    // EmployeeCRUDComponent
     //PipesComponent
-    //ParentComponent
+    // ParentComponent,
+    // TrafficLightComponent
+    //Math1Component,
+    //Math2Component
+    EmployeeComponent
   ],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css'
 })
 export class BodyComponent {
-
+  flag:boolean=true;
 }

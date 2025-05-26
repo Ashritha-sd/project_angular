@@ -9,6 +9,17 @@ import Snackbar from 'awesome-snackbar';
   styleUrl: './demo1.component.css'
 })
 export class Demo1Component {
+  myTimer:any;
+  constructor(){
+    this.myTimer=setInterval(()=>{
+      console.log("I'm message from demo1")
+    },1000);
+  }
+
+  ngOnDestroy(){
+    clearInterval(this.myTimer);
+  }
+
   openAlert(){
     Swal.fire('Good job!', 'You clicked the button!', 'success');
   }

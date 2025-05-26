@@ -10,4 +10,15 @@ import { Component } from '@angular/core';
 export class Child1Component {
   a:any;
   userName:string='Ashritha';
+  constructor() {
+    //this.a=10;
+    console.log('child constructor');
+  }
+  ngOnInit() {
+    console.log('child ngOnInit');
+  }
+  ngOnChanges(changes:any) {
+    console.log('child ngOnChanges');
+    console.log(changes)
+  }
 }

@@ -1,0 +1,24 @@
+<div class="dropdown">
+  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+    Filter: {{selectedFilter}}
+  </button>
+  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+    <li><a class="dropdown-item" (click)="selectFilter('all')">All Employees</a></li>
+    <li><a class="dropdown-item" (click)="selectFilter('male')">Male Employees</a></li>
+    <li><a class="dropdown-item" (click)="selectFilter('female')">Female Employees</a></li>
+  </ul>
+</div>
+<div>
+<table class="table table-bordered table-striped table-centered">
+    <tbody>
+        @for(e of empArr; track $index){
+        <tr>
+            <td>{{e.eId}}</td>
+            <td>{{e.name}}</td>
+            <td>{{e.sal}}</td>
+            <td>{{e.gender}}</td>
+        </tr>
+    }
+    </tbody>
+</table>
+</div>

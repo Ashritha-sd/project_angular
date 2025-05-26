@@ -1,6 +1,8 @@
 <div class="border border-5 p-2 mt-2 text-center">
     <div>I'm parent component</div>
-    <div>My own data a is {{a}}</div>
+    <div>My own data a is {{a}}
+        <div><input type="number" [(ngModel)]="a"></div>
+    </div>
     <div>Child1 data username is {{child1.userName}}</div>
     <div>Child2 data address is {{address_parent}}</div>
     <div class="row">
