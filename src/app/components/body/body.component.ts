@@ -14,6 +14,8 @@ import { TrafficLightComponent } from '../traffic-light/traffic-light.component'
 import { Demo2Component } from '../demo2/demo2.component';
 import { CommonModule } from '@angular/common';
 import { EmployeeComponent } from '../employee/employee.component';
+import { HttpDemo1Component } from '../http-demo1/http-demo1.component';
+import { HttpAsgn1Component } from '../http-asgn1/http-asgn1.component';
 
 @Component({
   selector: 'app-body',
@@ -32,7 +34,9 @@ import { EmployeeComponent } from '../employee/employee.component';
     // TrafficLightComponent
     //Math1Component,
     //Math2Component
-    EmployeeComponent
+    // EmployeeComponent
+    // HttpDemo1Component
+    HttpAsgn1Component
   ],
   templateUrl: './body.component.html',
   styleUrl: './body.component.css'

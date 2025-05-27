@@ -1,0 +1,9 @@
+<script>
+    user_url='https://jsonplaceholder.typicode.com/users';
+    async function fetchData(){
+    let response = await fetch(user_url);
+    let finalresponse = await response.json();
+    console.log(finalresponse);
+    }
+    fetchData();
+</script>
