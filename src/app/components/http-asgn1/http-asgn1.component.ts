@@ -21,7 +21,7 @@ export class HttpAsgn1Component {
   isLoading:boolean=false;
   isEditMode:boolean=false;
   userForm = {
-  id: null as number | null,
+  id: '',
   firstName: '',
   lastName: '',
   email: '',
@@ -57,7 +57,7 @@ export class HttpAsgn1Component {
       //console.log("Adduser");
       //const newUser = { ...this.userForm };
       // Only assign ID if it's a new user
-      this.userForm.id = this.getNextUserId();
+      this.userForm.id = ''+this.getNextUserId();
       //console.log(newUser);
       this.userService.addUser(this.userForm).subscribe(() => {
         this.resetForm();
@@ -67,7 +67,7 @@ export class HttpAsgn1Component {
   }
   resetForm(){
     this.userForm = {
-  id: null,
+  id: '',
   firstName: '',
   lastName: '',
   email: '',
