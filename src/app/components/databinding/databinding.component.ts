@@ -51,6 +51,7 @@ export class DatabindingComponent {
   }
 
   counter: number=0;
+  doubleCounter:number=this.counter*2;
 
   increment(){
     this.counter++;

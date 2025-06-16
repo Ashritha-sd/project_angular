@@ -8,8 +8,9 @@ import { MathService } from '../../services/math.service';
   styleUrl: './math1.component.css'
 })
 export class Math1Component {
+  //a:number=0;
   constructor(private mathservice: MathService){//dependency injection
-
+   // this.a=10;
   }
   ngOnInit(){
     console.log("I'm ngOnInit from math1 component");

@@ -1,0 +1,26 @@
+<h2 class="text-center">Http Demo2 Component</h2>
+<hr/>
+
+<table class="table table-bordered table-striped text-center">
+  <thead>
+    <tr>
+        <th>Id</th>
+        <th>FullName</th>
+        <th>email</th>
+        <th>gender</th>
+        <th>salary</th>
+    </tr>
+  </thead>
+  
+    <tbody>
+    @for (e of employees;track $index){
+    <tr>
+        <td>{{ e.id }}</td>
+        <td>{{ e.firstName }} {{ e.lastName }}</td>
+        <td>{{ e.email }}</td>
+        <td>{{ e.gender }}</td>
+        <td>{{ e.sal }}</td>
+    </tr>
+}
+  </tbody>
+</table>

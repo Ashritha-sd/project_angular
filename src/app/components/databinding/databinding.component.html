@@ -146,7 +146,7 @@
     <div>Enter your password</div>
     <input #mybox5 [type]="flag1" />
     <button class="btn btn-primary mx-2" (click)="switch()">
-      Text/Password
+      {{flag1=='password'?'text':'password'}}
     </button>
   </div>
 
@@ -155,6 +155,7 @@
   <div class="p-2 m-2 border">
     <div>Assignment-6</div>
     <p>Counter is {{ counter }}</p>
+    <div>Double Counter is {{doubleCounter}}</div>
     <button class="btn btn-primary" (click)="increment()">Increment</button>
     <button class="btn btn-primary mx-2" (click)="decrement()">
       Decrement
@@ -178,3 +179,4 @@
   </div>
 
 </div>
+

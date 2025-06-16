@@ -22,12 +22,12 @@ export class ProductsComponent {
   asc_sort()
   {
     this.productsArr.sort((x,y)=>x.price-y.price);
-    console.log(this.productsArr);
+    //console.log(this.productsArr);
   }
   desc_sort()
   {
     this.productsArr.sort((x,y)=>y.price-x.price);
-    console.log(this.productsArr);
+    //console.log(this.productsArr);
   }
   search(searchString: string)
   {
